@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.3 (Python 3.10.2 on win32)" generated="20220326 19:05:56.226" rpa="false" schemaversion="2">
+<suite id="s1" name="Automationpractice" source="C:\Prime_Projects\Treinamento\Básico\tests\features\automationpractice.robot">
+<test id="s1-t1" name="Caso de Teste 04: Adicionar cliente">
+<kw name="Abrir navegador Automation Practice" library="hooks" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>about:blank</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220326 19:05:56.560" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20220326 19:05:56.559" endtime="20220326 19:06:00.233"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>http://automationpractice.com/index.php</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220326 19:06:00.234" level="INFO">Opening url 'http://automationpractice.com/index.php'</msg>
+<status status="PASS" starttime="20220326 19:06:00.234" endtime="20220326 19:06:03.808"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220326 19:06:03.809" endtime="20220326 19:06:04.004"/>
+</kw>
+<status status="PASS" starttime="20220326 19:05:56.559" endtime="20220326 19:06:04.004"/>
+</kw>
+<kw name="Dado que o cliente esteja no site Automation Practice" library="kws_automation_web">
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>My Store</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20220326 19:06:04.086" level="INFO">Page title is 'My Store'.</msg>
+<status status="PASS" starttime="20220326 19:06:04.008" endtime="20220326 19:06:04.087"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath=//*[contains(text(), "Best Sellers")]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220326 19:06:04.088" endtime="20220326 19:06:04.162"/>
+</kw>
+<status status="PASS" starttime="20220326 19:06:04.005" endtime="20220326 19:06:04.162"/>
+</kw>
+<kw name="E clicar em SIGN IN" library="kws_automation_web">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//*[contains(text(), "Sign in")]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220326 19:06:04.163" level="INFO">Clicking element 'xpath=//*[contains(text(), "Sign in")]'.</msg>
+<status status="PASS" starttime="20220326 19:06:04.163" endtime="20220326 19:06:07.218"/>
+</kw>
+<status status="PASS" starttime="20220326 19:06:04.162" endtime="20220326 19:06:07.219"/>
+</kw>
+<kw name="E preenche o campo E-mail com dados válidos" library="kws_automation_web">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath=//*[contains(text(), "Create an account")]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220326 19:06:07.220" endtime="20220326 19:06:07.250"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=email_create</arg>
+<arg>${EMAIL_VALIDO}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220326 19:06:07.251" level="INFO">Typing text 'teste3@msn.com' into text field 'id=email_create'.</msg>
+<status status="PASS" starttime="20220326 19:06:07.250" endtime="20220326 19:06:07.460"/>
+</kw>
+<status status="PASS" starttime="20220326 19:06:07.220" endtime="20220326 19:06:07.461"/>
+</kw>
+<kw name="E clicar em CREATE AN ACCOUNT" library="kws_automation_web">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>xpath=//*[contains(@id, "SubmitCreate")]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220326 19:06:07.462" level="INFO">Clicking button 'xpath=//*[contains(@id, "SubmitCreate")]'.</msg>
+<status status="PASS" starttime="20220326 19:06:07.462" endtime="20220326 19:06:07.627"/>
+</kw>
+<status status="PASS" starttime="20220326 19:06:07.461" endtime="20220326 19:06:07.627"/>
+</kw>
+<kw name="E preenche os campos do cadastro com dados válidos" library="kws_automation_web">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath=//*[contains(text(), "Your personal information")]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220326 19:06:07.628" endtime="20220326 19:06:09.275"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${DADOS_USUARIO}[sexo]&quot;==&quot;Mr.&quot;">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//input[contains(@id, "id_gender1")]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220326 19:06:09.277" level="INFO">Clicking element 'xpath=//input[contains(@id, "id_gender1")]'.</msg>
+<status status="PASS" starttime="20220326 19:06:09.276" endtime="20220326 19:06:09.559"/>
+</kw>
+<status status="PASS" starttime="20220326 19:06:09.276" endtime="20220326 19:06:09.559"/>
+</branch>
+<branch type="ELSE IF" condition="&quot;${DADOS_USUARIO}[sexo]&quot;==&quot;Mrs.&quot;">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//input[contains(@id, "id_gender2")]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20220326 19:06:09.560" endtime="20220326 19:06:09.560"/>
+</kw>
+<status status="NOT RUN" starttime="20220326 19:06:09.559" endtime="20220326 19:06:09.560"/>
+</branch>
+<status status="PASS" starttime="20220326 19:06:09.275" endtime="20220326 19:06:09.560"/>
+</if>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=customer_firstname</arg>
+<arg>${DADOS_USUARIO}[nome]</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220326 19:06:09.562" level="INFO">Typing text 'Raphael' into text field 'id=customer_firstname'.</msg>
+<status status="PASS" starttime="20220326 19:06:09.561" endtime="20220326 19:06:10.147"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=customer_lastname</arg>
+<arg>${DADOS_USUARIO}[sobrenome]</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220326 19:06:10.148" level="INFO">Typing text 'Reis' into text field 'id=customer_lastname'.</msg>
+<status status="PASS" starttime="20220326 19:06:10.148" endtime="20220326 19:06:10.336"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=passwd</arg>
+<arg>${DADOS_USUARIO}[senha]</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220326 19:06:10.338" level="INFO">Typing text 'Teste123*' into text field 'id=passwd'.</msg>
+<status status="PASS" starttime="20220326 19:06:10.337" endtime="20220326 19:06:10.496"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//*[contains(@name, "days")]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220326 19:06:10.496" level="INFO">Clicking element 'xpath=//*[contains(@name, "days")]'.</msg>
+<status status="PASS" starttime="20220326 19:06:10.496" endtime="20220326 19:06:10.594"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//option[contains(text(),'${DADOS_USUARIO}[aniversariodia]')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220326 19:06:10.595" level="INFO">Clicking element 'xpath=//option[contains(text(),'31')]'.</msg>
+<status status="PASS" starttime="20220326 19:06:10.594" endtime="20220326 19:06:10.684"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//*[contains(@name, "months")]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220326 19:06:10.684" level="INFO">Clicking element 'xpath=//*[contains(@name, "months")]'.</msg>
+<status status="PASS" starttime="20220326 19:06:10.684" endtime="20220326 19:06:10.813"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//option[contains(text(),'${DADOS_USUARIO}[aniversariomes]')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220326 19:06:10.814" level="INFO">Clicking element 'xpath=//option[contains(text(),'December')]'.</msg>
+<status status="PASS" starttime="20220326 19:06:10.813" endtime="20220326 19:06:10.876"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//*[contains(@name, "years")]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220326 19:06:10.876" level="INFO">Clicking element 'xpath=//*[contains(@name, "years")]'.</msg>
+<status status="PASS" starttime="20220326 19:06:10.876" endtime="20220326 19:06:11.032"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//option[contains(text(),'${DADOS_USUARIO}[aniversarioano]')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220326 19:06:11.033" level="INFO">Clicking element 'xpath=//option[contains(text(),'1987')]'.</msg>
+<status status="PASS" starttime="20220326 19:06:11.032" endtime="20220326 19:06:11.141"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${DADOS_USUARIO}[newsletter]&quot;==&quot;Yes&quot;">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//*[contains(text(), "Sign up for our newsletter!")]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220326 19:06:11.142" level="INFO">Clicking element 'xpath=//*[contains(text(), "Sign up for our newsletter!")]'.</msg>
+<status status="PASS" starttime="20220326 19:06:11.142" endtime="20220326 19:06:11.228"/>
+</kw>
+<status status="PASS" starttime="20220326 19:06:11.141" endtime="20220326 19:06:11.228"/>
+</branch>
+<status status="PASS" starttime="20220326 19:06:11.141" endtime="20220326 19:06:11.228"/>
+</if>
+<if>
+<branch type="IF" condition="&quot;${DADOS_USUARIO}[special_offers]&quot;==&quot;Yes&quot;">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//*[contains(text(), "Receive special offers from our partners!")]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220326 19:06:11.229" level="INFO">Clicking element 'xpath=//*[contains(text(), "Receive special offers from our partners!")]'.</msg>
+<status status="PASS" starttime="20220326 19:06:11.229" endtime="20220326 19:06:11.288"/>
+</kw>
+<status status="PASS" starttime="20220326 19:06:11.229" endtime="20220326 19:06:11.288"/>
+</branch>
+<status status="PASS" starttime="20220326 19:06:11.228" endtime="20220326 19:06:11.288"/>
+</if>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath=//*[contains(text(), "Your address")]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220326 19:06:11.288" endtime="20220326 19:06:11.313"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=firstname</arg>
+<arg>${DADOS_USUARIO}[nome]</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220326 19:06:11.314" level="INFO">Typing text 'Raphael' into text field 'id=firstname'.</msg>
+<status status="PASS" starttime="20220326 19:06:11.313" endtime="20220326 19:06:11.429"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=lastname</arg>
+<arg>${DADOS_USUARIO}[sobrenome]</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220326 19:06:11.430" level="INFO">Typing text 'Reis' into text field 'id=lastname'.</msg>
+<status status="PASS" starttime="20220326 19:06:11.429" endtime="20220326 19:06:11.540"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=company</arg>
+<arg>${DADOS_USUARIO}[company]</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220326 19:06:11.540" level="INFO">Typing text 'Prime Control' into text field 'id=company'.</msg>
+<status status="PASS" starttime="20220326 19:06:11.540" endtime="20220326 19:06:11.677"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=address1</arg>
+<arg>${DADOS_USUARIO}[address]</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220326 19:06:11.678" level="INFO">Typing text '1717 Harrison St' into text field 'id=address1'.</msg>
+<status status="PASS" starttime="20220326 19:06:11.677" endtime="20220326 19:06:11.806"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=city</arg>
+<arg>${DADOS_USUARIO}[city]</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220326 19:06:11.807" level="INFO">Typing text 'San Francisco' into text field 'id=city'.</msg>
+<status status="PASS" starttime="20220326 19:06:11.806" endtime="20220326 19:06:11.922"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id=uniform-id_state</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220326 19:06:11.923" level="INFO">Clicking element 'id=uniform-id_state'.</msg>
+<status status="PASS" starttime="20220326 19:06:11.923" endtime="20220326 19:06:12.008"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//option[contains(text(),'${DADOS_USUARIO}[state]')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220326 19:06:12.009" level="INFO">Clicking element 'xpath=//option[contains(text(),'California')]'.</msg>
+<status status="PASS" starttime="20220326 19:06:12.008" endtime="20220326 19:06:12.077"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=postcode</arg>
+<arg>${DADOS_USUARIO}[postal_code]</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220326 19:06:12.078" level="INFO">Typing text '94103' into text field 'id=postcode'.</msg>
+<status status="PASS" starttime="20220326 19:06:12.078" endtime="20220326 19:06:12.239"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id=id_country</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220326 19:06:12.240" level="INFO">Clicking element 'id=id_country'.</msg>
+<status status="PASS" starttime="20220326 19:06:12.240" endtime="20220326 19:06:12.334"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//option[contains(text(), '${DADOS_USUARIO}[country]')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220326 19:06:12.336" level="INFO">Clicking element 'xpath=//option[contains(text(), 'United States')]'.</msg>
+<status status="PASS" starttime="20220326 19:06:12.335" endtime="20220326 19:06:12.400"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=other</arg>
+<arg>${DADOS_USUARIO}[additional_information]</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220326 19:06:12.401" level="INFO">Typing text 'usuário de testes' into text field 'id=other'.</msg>
+<status status="PASS" starttime="20220326 19:06:12.400" endtime="20220326 19:06:12.560"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=phone</arg>
+<arg>${DADOS_USUARIO}[home_phone]</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220326 19:06:12.561" level="INFO">Typing text '551122229999' into text field 'id=phone'.</msg>
+<status status="PASS" starttime="20220326 19:06:12.560" endtime="20220326 19:06:12.674"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=phone_mobile</arg>
+<arg>${DADOS_USUARIO}[mobile_phone]</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220326 19:06:12.675" level="INFO">Typing text '5511922229999' into text field 'id=phone_mobile'.</msg>
+<status status="PASS" starttime="20220326 19:06:12.675" endtime="20220326 19:06:12.790"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=alias</arg>
+<arg>${DADOS_USUARIO}[address_alternative]</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220326 19:06:12.791" level="INFO">Typing text '2717 Harrison St' into text field 'id=alias'.</msg>
+<status status="PASS" starttime="20220326 19:06:12.790" endtime="20220326 19:06:12.934"/>
+</kw>
+<status status="PASS" starttime="20220326 19:06:07.627" endtime="20220326 19:06:12.934"/>
+</kw>
+<kw name="Quando submeter o cadastro ao clicar no botão REGISTER" library="kws_automation_web">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//*[contains(@name, "submitAccount")]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220326 19:06:12.936" level="INFO">Clicking element 'xpath=//*[contains(@name, "submitAccount")]'.</msg>
+<status status="PASS" starttime="20220326 19:06:12.935" endtime="20220326 19:06:16.169"/>
+</kw>
+<status status="PASS" starttime="20220326 19:06:12.935" endtime="20220326 19:06:16.169"/>
+</kw>
+<kw name="Então conferir se o cadastro foi efetuado" library="kws_automation_web">
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>My account - My Store</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20220326 19:06:16.189" level="INFO">Page title is 'My account - My Store'.</msg>
+<status status="PASS" starttime="20220326 19:06:16.170" endtime="20220326 19:06:16.189"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath=//span[contains(text(),'${DADOS_USUARIO}[nome]')]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220326 19:06:16.189" endtime="20220326 19:06:16.319"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220326 19:06:16.542" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-26.png"&gt;&lt;img src="selenium-screenshot-26.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220326 19:06:16.319" endtime="20220326 19:06:16.542"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath=//a[contains(@title, "Log me out")]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220326 19:06:16.542" endtime="20220326 19:06:16.617"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220326 19:06:16.842" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-27.png"&gt;&lt;img src="selenium-screenshot-27.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220326 19:06:16.617" endtime="20220326 19:06:16.842"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath=//h1[contains(text(), "My account")]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220326 19:06:16.842" endtime="20220326 19:06:16.926"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220326 19:06:17.141" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-28.png"&gt;&lt;img src="selenium-screenshot-28.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220326 19:06:16.926" endtime="20220326 19:06:17.141"/>
+</kw>
+<status status="PASS" starttime="20220326 19:06:16.170" endtime="20220326 19:06:17.141"/>
+</kw>
+<kw name="Fechar navegador Automation Practice" library="hooks" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220326 19:06:17.142" endtime="20220326 19:06:19.553"/>
+</kw>
+<status status="PASS" starttime="20220326 19:06:17.142" endtime="20220326 19:06:19.553"/>
+</kw>
+<tag>Cad_user</tag>
+<status status="PASS" starttime="20220326 19:05:56.556" endtime="20220326 19:06:19.556"/>
+</test>
+<doc>Aqui estarão presente todos os testes automatizados do sistema web Automation Practice</doc>
+<status status="PASS" starttime="20220326 19:05:56.231" endtime="20220326 19:06:19.561"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">Cad_user</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Automationpractice">Automationpractice</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20220326 19:05:56.553" level="ERROR">Error in file 'C:\Prime_Projects\Treinamento\Básico\src\config\package.robot' on line 16: Invalid resource file extension '.yaml'. Supported extensions are '.resource', '.robot', '.txt', '.tsv', '.rst' and '.rest'.</msg>
+</errors>
+</robot>
