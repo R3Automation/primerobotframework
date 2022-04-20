@@ -11,6 +11,7 @@ Library     DebugLibrary
 ##########################
 Resource    ../auto/keywords/kws_web.robot
 Resource    ../auto/keywords/kws_automation_web.robot
+Resource    ../auto/keywords/kws_login.robot
 
 ##########################
 #          Pages         #
