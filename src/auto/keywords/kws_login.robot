@@ -6,7 +6,7 @@ Documentation      Aqui estarão presente todas as Keywords dos testes da funcio
 ##########################
 #         Config         #
 ##########################
-Resource    ../../src/config/package.robot
+Resource    ../../config/package.robot
 
 
 *** Keywords ***
